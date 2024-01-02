@@ -50,7 +50,7 @@ steps:
         # Create the body content as a string
       $body = @"
       --$boundary
-      Content-Disposition: form-data; name="file"; filename="$(Split-Path $Files -leaf)"
+      Content-Disposition: form-data; name="file"; filename="$(Split-Path $File -leaf)"
       Content-Type: application/octet-stream
 
       $content
@@ -63,7 +63,7 @@ steps:
       Content-Disposition:  form-data; name="tool_name"
       Content-Type: text/plain
 
-      $(Split-Path $Files -leaf)
+      $(Split-Path $File -leaf)
       --$boundary--
       "@
 
